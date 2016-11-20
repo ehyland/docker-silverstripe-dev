@@ -45,7 +45,7 @@
     - Database: silverstripe
     - Port: 3306
 
-## Run commands within the docker dontainer
+## Run commands within the docker container
 1.  Attach terminal to docker container  
     *think of this as ssh-ing into your container*
 
@@ -53,7 +53,7 @@
     docker-compose exec web bash
     ```
 
-2.  Run any command you like, such as
+2.  Run any command you want, such as
     - `composer update`
     - `composer require <sick-hot-dependancy>`
     - `bash ./framework/sake /dev/build "flush=all"`
@@ -116,7 +116,7 @@
 2.  Copy mysql settings from the [default _ss_environment.php file](dockerfiles/php5-apache2/_ss_environment.php)
 
 ## Install extra server dependancies  
-1.  Make changes to [Dockerfile](dockerfiles/php5-apache2/) that builds the container silverstripe runs in.
+1.  Add dependancies to [Dockerfile](dockerfiles/php5-apache2/)
 2.  Update the running containers
 
     ```
