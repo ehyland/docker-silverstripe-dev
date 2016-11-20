@@ -116,7 +116,7 @@
 2.  Copy mysql settings from the [default _ss_environment.php file](dockerfiles/php5-apache2/_ss_environment.php)
 
 ## Install extra server dependancies  
-1.  Add dependancies to [Dockerfile](dockerfiles/php5-apache2/)
+1.  Add dependancies to the [Dockerfile](dockerfiles/php5-apache2/Dockerfile)
 2.  Update the running containers
 
     ```
