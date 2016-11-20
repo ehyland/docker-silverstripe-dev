@@ -80,8 +80,3 @@ EXPOSE 8080
 WORKDIR ${SILVERSTRIPE_ROOT}
 USER www-data
 CMD ["/docker-entry.sh"]
-
-
-# EXPOSE 80 443
-# CMD ["nginx", "-g", "daemon off;"]
-
