@@ -1,10 +1,10 @@
 # Usage
 
 ## First Run
-1. Clone this repository
-    ```
-    git clone https://github.com/ehyland/docker-silverstripe-dev.git
-    ```
+1. Clone this repository  
+```
+git clone https://github.com/ehyland/docker-silverstripe-dev.git
+```
 2. Change into the project directory
     ```
     cd ./docker-silverstripe-dev
