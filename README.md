@@ -9,18 +9,17 @@
     ```
     cd ./docker-silverstripe-dev
     ```
-3. Create a directory to mount into the docker container
+3. Create a directory to house the silverstripe project and mount in the docker container
     ```
     mkdir -p ./volumes/site
     ```
 4. Start docker containers (and run as a daemon)  
-    - This will take some time first time you run while dependancies are downloaded, subsequent runs will be much faster  
-    - If you containers fail to launch, ensure you **do not** have web or mysql servers attached to ports 80 or 3306
+    - This will be slow on first run while dependancies are downloaded & installed, subsequent runs will be much faster  
+    - If containers fail to launch, ensure you **don't** have web or mysql servers attached to ports 80 or 3306
     ```
     docker-compose up -d
     ```
-5. Create a new silverstripe project  
-    *The following command will attached to the web container and run `composer create-project silverstripe/installer .`, creating a new silverstripe project.* 
+5. Create a new silverstripe project 
     ```
     docker-compose run web composer create-project silverstripe/installer .
     ```
