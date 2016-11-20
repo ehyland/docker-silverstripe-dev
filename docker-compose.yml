@@ -1,0 +1,28 @@
+version: '2'
+
+volumes:
+  mysql-data:
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    env_file:
+      - mysql.env
+  web:
+    build: ./dockerfiles/php5-apache2
+    ports:
+      - 80:8080
+    volumes:
+      - ./volumes/site:/var/www/site
+    env_file:
+      - mysql.env
+    environment:
+      # DOCKERHOST must resolve to host running your IDE.
+      # This can be achived using on of the following methods:
+      #   1. on osx, add `export DOCKERHOST="$(ipconfig getifaddr en0)"` to ~/.bash_profile
+      #   2. or, replace `${DOCKERHOST}` with your local network ip address. e.g. 192.168.x.x
+      XDEBUG_CONFIG: "remote_enable=1 remote_autostart=1 remote_host=${DOCKERHOST}"
