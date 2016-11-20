@@ -122,3 +122,13 @@
     ```
     docker-compose up --build
     ```
+
+## Use HHVM & NGINX
+1.  Open [docker-compose.yml](docker-compose.yml)
+2.  Change `build: ./dockerfiles/php5-apache2` to `build: ./dockerfiles/hhvm-nginx`
+3.  Update containers
+
+    ```
+    docker-compose up --build -d
+    ```
+
