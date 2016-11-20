@@ -19,7 +19,7 @@
     ```
     docker-compose up -d
     ```
-5. Create a new silverstripe project 
+5. Create a new silverstripe project
     ```
     docker-compose run web composer create-project silverstripe/installer .
     ```
