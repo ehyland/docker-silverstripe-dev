@@ -36,10 +36,7 @@ RUN mkdir -p /usr/local/node && \
     curl https://nodejs.org/dist/v6.9.1/node-v6.9.1-linux-x64.tar.xz | tar x --xz --strip-components=1 -C /usr/local/node
 
 # composer
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-    php -r "if (hash_file('SHA384', 'composer-setup.php') === 'aa96f26c2b67226a324c27919f1eb05f21c248b987e6195cad9690d5c1ff713d53020a02ac8c217dbf90a7eacc9d141d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
-    php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-    php -r "unlink('composer-setup.php');"
+RUN curl -fsSL https://raw.githubusercontent.com/composer/getcomposer.org/a488222dad0b6eaaa211ed9a21f016bb706b2980/web/installer | php -- --quiet --install-dir=/usr/local/bin --filename=composer
 
 # configure nginx
 RUN rm /etc/nginx/conf.d/*
